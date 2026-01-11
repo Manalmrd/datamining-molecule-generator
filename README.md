@@ -6,14 +6,13 @@ Application web full-stack utilisant l'intelligence artificielle pour générer 
 
 
 
-!\[Interface Principale](screenshots/interface-principale.png)
-
-!\[Interface Principale](screenshots/interface-principale1.png)
-
-!\[Propriétés Prédites](screenshots/proprietes-predites.png)
 
 
+![Interface Principale](https://raw.githubusercontent.com/Manalmrd/datamining-molecule-generator/main/screenshots/interface-principale.png)
 
+![Interface Principale1](https://raw.githubusercontent.com/Manalmrd/datamining-molecule-generator/main/screenshots/interface-principale1.png)
+
+![Propriétés Prédites](https://raw.githubusercontent.com/Manalmrd/datamining-molecule-generator/main/screenshots/proprietes-predites.png)
 
 
 \## Fonctionnalités
