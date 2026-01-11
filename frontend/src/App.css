@@ -1,0 +1,735 @@
+/* Variables CSS */
+:root {
+  --primary: #4f46e5;
+  --primary-light: #6366f1;
+  --primary-dark: #4338ca;
+  --secondary: #7c3aed;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --radius-sm: 0.375rem;
+  --radius: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+}
+
+/* Reset et styles de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.app-container {
+  min-height: 100vh;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 100%);
+}
+
+/* En-tête */
+.app-header {
+  margin-bottom: 2.5rem;
+}
+
+.header-content {
+  text-align: center;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .logo-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.logo-icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: white;
+}
+
+.title-wrapper {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .title-wrapper {
+    text-align: left;
+  }
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--gray-900), var(--gray-700));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--gray-600);
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .subtitle {
+    margin: 0;
+  }
+}
+
+/* Grille principale */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .content-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+/* Panneau des propriétés */
+.properties-panel {
+  background: white;
+  border-radius: var(--radius-2xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--gray-200);
+}
+
+.panel-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.panel-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 0.75rem;
+}
+
+.panel-description {
+  color: var(--gray-600);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Liste des propriétés */
+.properties-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.property-item {
+  padding: 1.25rem;
+  background: var(--gray-50);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--gray-200);
+  transition: all 0.3s ease;
+}
+
+.property-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.property-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.property-label-group {
+  flex: 1;
+}
+
+.property-label {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 0.25rem;
+}
+
+.property-unit {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  background: var(--gray-100);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius);
+}
+
+.value-display {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.value-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  min-width: 3.5rem;
+  text-align: right;
+}
+
+/* Slider personnalisé */
+.slider-container {
+  position: relative;
+  padding-top: 0.5rem;
+}
+
+.slider-scale {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.scale-label {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+.custom-slider {
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--primary);
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.custom-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-xl);
+}
+
+.custom-slider::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--primary);
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+}
+
+.slider-track {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: var(--gray-200);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.slider-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-light), var(--primary));
+  border-radius: 4px;
+  transition: width 0.2s ease;
+}
+
+/* Bouton de génération */
+.generate-button-container {
+  margin-top: 1rem;
+}
+
+.generate-button {
+  width: 100%;
+  padding: 1.25rem 2rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  border-radius: var(--radius-xl);
+  font-size: 1.125rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-lg);
+}
+
+.generate-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+.generate-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.generate-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Panneau de visualisation */
+.visualization-panel {
+  background: white;
+  border-radius: var(--radius-2xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--gray-200);
+  min-height: 600px;
+}
+
+.molecule-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--gray-100);
+}
+
+.molecule-name {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.molecule-id {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .molecule-id {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.id-label {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+.id-value {
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.875rem;
+  background: var(--gray-100);
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--radius);
+  color: var(--gray-800);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Contenu de visualisation */
+.visualization-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.graph-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.graph-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.graph-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.graph-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--radius);
+  background: var(--gray-100);
+  color: var(--gray-700);
+}
+
+.badge-3d {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  color: white;
+}
+
+.graph-container {
+  background: var(--gray-50);
+  border-radius: var(--radius-xl);
+  border: 2px dashed var(--gray-300);
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.graph-2d {
+  background: linear-gradient(135deg, var(--gray-50), var(--gray-100));
+}
+
+.graph-3d {
+  background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+  border-color: #c7d2fe;
+}
+
+.graph-placeholder {
+  text-align: center;
+  padding: 2rem;
+}
+
+.molecule-animation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.atom {
+  width: 2rem;
+  height: 2rem;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.bond {
+  width: 2rem;
+  height: 0.25rem;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  border-radius: 0.125rem;
+}
+
+.molecule-3d-animation {
+  perspective: 1000px;
+  margin-bottom: 1.5rem;
+}
+
+.molecule-3d {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  animation: rotate3d 10s linear infinite;
+}
+
+.atom-3d {
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  border-radius: 50%;
+}
+
+.bond-3d {
+  position: absolute;
+  width: 3rem;
+  height: 0.125rem;
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  transform-origin: left center;
+}
+
+/* Positionnement des atomes et liaisons 3D */
+.molecule-3d .atom-3d:nth-child(1) { transform: translate3d(0, 0, 0); }
+.molecule-3d .atom-3d:nth-child(2) { transform: translate3d(3rem, 0, 0); }
+.molecule-3d .atom-3d:nth-child(3) { transform: translate3d(0, 3rem, 0); }
+.molecule-3d .atom-3d:nth-child(4) { transform: translate3d(3rem, 3rem, 0); }
+
+.molecule-3d .bond-3d:nth-child(5) { transform: translate3d(0, 0.75rem, 0) rotate(0deg); width: 3rem; }
+.molecule-3d .bond-3d:nth-child(6) { transform: translate3d(0, 0.75rem, 0) rotate(90deg); width: 3rem; }
+.molecule-3d .bond-3d:nth-child(7) { transform: translate3d(3rem, 0.75rem, 0) rotate(0deg); width: 3rem; }
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes rotate3d {
+  0% { transform: rotateX(0) rotateY(0) rotateZ(0); }
+  100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(0); }
+}
+
+.graph-description {
+  color: var(--gray-600);
+  font-size: 0.875rem;
+  max-width: 20rem;
+  margin: 0 auto;
+}
+
+/* Propriétés prédites */
+.predicted-properties {
+  background: linear-gradient(135deg, #d1fae5, #dbeafe);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  border: 1px solid #a7f3d0;
+}
+
+.properties-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.properties-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--success);
+}
+
+.properties-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.properties-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.property-tag {
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  color: var(--gray-700);
+  border: 1px solid #a7f3d0;
+  transition: all 0.2s ease;
+}
+
+.property-tag:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+/* État vide */
+.empty-state {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.empty-state-content {
+  text-align: center;
+  max-width: 28rem;
+}
+
+.empty-icon {
+  margin-bottom: 1.5rem;
+}
+
+.empty-icon svg {
+  color: var(--gray-300);
+}
+
+.empty-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray-400);
+  margin-bottom: 0.75rem;
+}
+
+.empty-description {
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+.graph-3d {
+  width: 100% !important;
+  height: 400px !important;
+  min-height: 400px;
+  display: block;
+  background-color: white;
+}
+
+/* Ajoutez ceci à votre App.css */
+.mol-viewer-3d {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour les contrôles 3D */
+.3d-controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.control-btn {
+  padding: 8px 16px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.control-btn:hover {
+  background-color: #2563eb;
+}
+
+.download-btn {
+  background-color: #10b981;
+}
+
+.download-btn:hover {
+  background-color: #059669;
+}
+
+/* Option 1 : Icône simple */
+.icon-pdf {
+
+  margin-right: 0.5rem;
+  vertical-align: middle; /* Rend l'icône blanche */
+}
+
+/* Option 2 : Icône avec effet au survol */
+.export-pdf-button:hover .icon-pdf {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
+/* Style de base */
+.download-icon {
+  width: 1.25rem;    /* 20px */
+  height: 1.25rem;
+  vertical-align: middle;
+  transition: transform 0.2s ease;
+}
+
+/* Effet au survol */
+.action-btn:hover .download-icon {
+  transform: translateY(2px); /* Effet de "téléchargement" */
+}
+
+/* Style du bouton */
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background-color: #f3f4f6;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-btn:hover {
+  background-color: #e5e7eb;
+  border-color: #9ca3af;
+}
